@@ -1,13 +1,14 @@
-using GameBrowser.Commands;
+﻿using GameBrowser.Commands;
 using GameBrowser.Remote;
 using GameBrowser.Shared;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Hosting;
 
-namespace GameBrowser.API
+
+namespace GameBrowser.WebAPI
 {
     public class Startup
     {
@@ -25,7 +26,8 @@ namespace GameBrowser.API
 
             services
                 .AddHttpClient()
-                .AddControllers()
+                .AddMvc()
+                .SetCompatibilityVersion(CompatibilityVersion.Version_2_1)
                 ;
 
             // Remotes
@@ -41,7 +43,7 @@ namespace GameBrowser.API
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
+        public void Configure(IApplicationBuilder app, IHostingEnvironment env)
         {
             if (env.IsDevelopment())
             {
@@ -51,20 +53,19 @@ namespace GameBrowser.API
             app
                 .UseDefaultFiles()
                 .UseStaticFiles()
-                .UseRouting()
                 .UseHttpsRedirection()
-                .UseAuthorization()
-                .UseEndpoints(endpoints =>
-                {
-                    var ignoreThese = new[]
-                    {
-                        "api",
-                        "scripts",
-                        "favicon"
-                    }.StringJoin("|");
-                    endpoints.MapFallbackToFile($"{{*url:regex(^(?!{ignoreThese}).*$)}}", "index.html");
-                    endpoints.MapControllers();
-                })
+                .UseMvc()
+                //.UseEndpoints(endpoints =>
+                //{
+                //    var ignoreThese = new[]
+                //    {
+                //        "api",
+                //        "scripts",
+                //        "favicon"
+                //    }.StringJoin("|");
+                //    endpoints.MapFallbackToFile($"{{*url:regex(^(?!{ignoreThese}).*$)}}", "index.html");
+                //    endpoints.MapControllers();
+                //})
                 ;
         }
     }

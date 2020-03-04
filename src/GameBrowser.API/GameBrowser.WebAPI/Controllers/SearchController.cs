@@ -12,15 +12,10 @@ namespace GameBrowser.API.Controllers
     [Route("/api/v1/search")]
     public class SearchController : ControllerBase
     {
-        private readonly ILogger<SearchController> _logger;
         private readonly ISearchCommands searchCommands;
 
-        public SearchController(
-            ILogger<SearchController> logger,
-            ISearchCommands searchCommands
-            )
+        public SearchController(ISearchCommands searchCommands)
         {
-            _logger = logger;
             this.searchCommands = searchCommands;
         }
 

@@ -11,15 +11,8 @@ export class ExamplePage extends React.Component<ExamplePageProps> {
 
     public render() {
         const { viewModel } = this.props;
-        if (viewModel.kind === 'loading') {
-            return <div>Loading...</div>
-        }
 
-        if (viewModel.kind === 'error') {
-            return <div>Failed to load!</div>
-        }
-
-        const { target } = viewModel.value;
+        const { target } = viewModel;
 
         return <div className='m-5 p-5 rounded flex flex-col'>
             <h1>New Page</h1>

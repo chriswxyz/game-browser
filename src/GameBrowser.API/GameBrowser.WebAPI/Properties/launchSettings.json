@@ -1,7 +1,7 @@
 ﻿{
   "$schema": "http://json.schemastore.org/launchsettings.json",
   "profiles": {
-    "GameBrowser.API": {
+    "GameBrowser.WebAPI": {
       "commandName": "Project",
       "launchBrowser": false,
       "launchUrl": "",

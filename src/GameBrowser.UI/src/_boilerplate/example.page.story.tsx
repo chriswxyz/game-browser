@@ -7,10 +7,7 @@ import { ExamplePageState } from './example.duck';
 storiesOf('00 - Component Example', module)
     .add('Hello', () => {
         const viewModel: ExamplePageState['viewModel'] = {
-            kind: 'success',
-            value: {
-                target: 'Storybook'
-            }
+            target: 'Storybook'
         };
 
         return <ExamplePage

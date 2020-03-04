@@ -20,6 +20,6 @@ module.exports = {
         extensions: ['.tsx', '.ts', '.js'],
     },
     output: {
-        path: path.resolve(__dirname, '../GameBrowser.API/GameBrowser.API/wwwroot/scripts')
+        path: path.resolve(__dirname, '../GameBrowser.API/GameBrowser.WebAPI/wwwroot/scripts')
     }
 };

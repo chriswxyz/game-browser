@@ -3,13 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29806.167
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GameBrowser.API", "GameBrowser.API\GameBrowser.API.csproj", "{0B060B65-DB78-4EA0-8661-FD2732ECE36A}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GameBrowser.Commands", "GameBrowser.Commands\GameBrowser.Commands.csproj", "{7EDA1B6C-630E-4981-AA08-FF27D07EA123}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GameBrowser.Shared", "GameBrowser.Shared\GameBrowser.Shared.csproj", "{555DAD46-5505-4A6B-A682-7D6711E28751}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GameBrowser.Remote", "GameBrowser.Remote\GameBrowser.Remote.csproj", "{3C363384-0636-4E70-AF65-F5C52EA1900A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GameBrowser.WebAPI", "GameBrowser.WebAPI\GameBrowser.WebAPI.csproj", "{50409AB4-D004-49D4-9417-3F05EE52EF86}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -17,10 +17,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{0B060B65-DB78-4EA0-8661-FD2732ECE36A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{0B060B65-DB78-4EA0-8661-FD2732ECE36A}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{0B060B65-DB78-4EA0-8661-FD2732ECE36A}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{0B060B65-DB78-4EA0-8661-FD2732ECE36A}.Release|Any CPU.Build.0 = Release|Any CPU
 		{7EDA1B6C-630E-4981-AA08-FF27D07EA123}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{7EDA1B6C-630E-4981-AA08-FF27D07EA123}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7EDA1B6C-630E-4981-AA08-FF27D07EA123}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -33,6 +29,10 @@ Global
 		{3C363384-0636-4E70-AF65-F5C52EA1900A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3C363384-0636-4E70-AF65-F5C52EA1900A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3C363384-0636-4E70-AF65-F5C52EA1900A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{50409AB4-D004-49D4-9417-3F05EE52EF86}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{50409AB4-D004-49D4-9417-3F05EE52EF86}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{50409AB4-D004-49D4-9417-3F05EE52EF86}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{50409AB4-D004-49D4-9417-3F05EE52EF86}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -9,6 +9,7 @@ storiesOf('SearchInput', module)
     .add('Usage', () => {
         const searchTerm = text('searchTerm', 'sonic the hedgehog');
         return <SearchInput
+            disabled={false}
             searchTerm={searchTerm}
             searchTermChanged={action('searchTermChanged')}
         />

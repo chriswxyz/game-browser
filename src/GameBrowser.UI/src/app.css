@@ -1,0 +1,45 @@
+html {
+    min-height: 100vh;
+    min-width: 100vw;
+    background-blend-mode: screen;
+    background:
+        radial-gradient(circle at top right, rgb(158, 3, 93) 0%, rgb(0, 0, 83) 20%, transparent 65%),
+        radial-gradient(circle at 30% top, rgb(8, 128, 124) 0%, rgb(7, 7, 46) 30%, transparent 70%),
+        radial-gradient(circle at 82% 3%, rgb(109, 16, 87) 0%, rgb(6, 6, 26) 15%, rgb(1, 1, 12) 100%);
+    overflow-x: hidden;
+}
+
+.bouncy-ease {
+    backface-visibility: hidden;
+    transition: 0.25s cubic-bezier(.68, -0.30, 0.27, 1.35);
+}
+
+.animation-delay-1 {
+    animation-delay: 0.33s;
+}
+
+.animation-delay-2 {
+    animation-delay: 0.66s;
+}
+
+.loading {
+    transform: translateY(0);
+    animation-name: loadinganim;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    animation-timing-function: cubic-bezier(0.51,-0.1, 0.23, 1.77);
+}
+
+.small-caps {
+    font-variant: small-caps;
+}
+
+.font-2p {
+    font-family: 'Press Start 2P', monospace;
+}
+
+@keyframes loadinganim {
+    0% { transform: translateY(0); }
+    25% { transform: translateY(-1.5rem); }
+    50% { transform: translateY(0); }
+}

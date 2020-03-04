@@ -13,9 +13,6 @@ export class Routes extends React.Component {
                 <Route exact path='/'>
                     <SearchPageController />
                 </Route>
-                <Route path='/two'>
-                    <div>Two</div>
-                </Route>
                 <Route path="*">
                     <div>404!</div>
                 </Route>

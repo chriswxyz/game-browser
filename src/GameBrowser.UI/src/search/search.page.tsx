@@ -21,12 +21,12 @@ export class SearchPage extends React.Component<SearchPageProps> {
     public render() {
         const { viewModel } = this.props;
 
-        const { isLoading, searchTerm, currentGame, imageUrls: covers } = viewModel;
+        const { isLoading, searchTerm, currentGame, searchResult } = viewModel;
 
-        let gameSummaryEl = null;
+        let mainEl = null;
 
         if (isLoading) {
-            gameSummaryEl = <div className='flex justify-center items-center m-5 p-5 text-2xl'>
+            mainEl = <div className='flex justify-center items-center m-5 p-5 text-2xl'>
                 <div className='flex'>
                     <div className='loading'>👾</div>
                     <div className='loading animation-delay-1'>👾</div>
@@ -37,7 +37,7 @@ export class SearchPage extends React.Component<SearchPageProps> {
             const releaseYear = currentGame.firstReleaseDate
                 ? new Date(parseInt(currentGame.firstReleaseDate) * 1000).getFullYear()
                 : null;
-            gameSummaryEl = <div className='flex flex-wrap'>
+            mainEl = <div className='flex flex-wrap'>
                 <CoverGallery
                     {...viewModel}
                     {...this.props}
@@ -51,6 +51,11 @@ export class SearchPage extends React.Component<SearchPageProps> {
                     </div>
                 </div>
             </div>;
+        } else if (searchResult === 'none') {
+
+            mainEl = <div className='flex justify-center items-center m-5 p-5 text-2xl text-white'>
+                😿 No results found
+            </div>;
         }
 
         return <div className='m-3 rounded flex flex-col'>
@@ -61,7 +66,7 @@ export class SearchPage extends React.Component<SearchPageProps> {
                 </div>
                 <SearchInput disabled={isLoading} searchTerm={searchTerm} searchTermChanged={this.searchTermChanged} />
             </form>
-            {gameSummaryEl}
+            {mainEl}
         </div>;
     }
 }

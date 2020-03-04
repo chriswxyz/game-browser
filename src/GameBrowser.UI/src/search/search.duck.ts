@@ -13,6 +13,7 @@ export interface SearchPageSuccessState {
     coverIndex: number;
     searchTerm: string;
     currentGame: GameResult | null;
+    searchResult: 'initial' | 'none' | 'some';
     isLoading: boolean;
 }
 
@@ -53,7 +54,8 @@ export function initialState(): SearchPageState {
             coverIndex: 0,
             searchTerm: '',
             currentGame: null,
-            isLoading: false
+            isLoading: false,
+            searchResult: 'initial'
         },
         dataModel: {
             searchTerm: '',
@@ -82,12 +84,17 @@ export function reducer(state = initialState(), action: SearchAction): SearchPag
                     .map(x => x.coverId)
                     .map(x => `https://images.igdb.com/igdb/image/upload/t_cover_big/${x}.jpg`);
 
+                const searchResult = action.payload.length > 0
+                    ? 'some'
+                    : 'none'
+
                 next.viewModel = {
                     coverIndex: 0,
                     imageUrls: covers,
                     searchTerm: next.dataModel.searchTerm,
                     currentGame,
-                    isLoading: false
+                    isLoading: false,
+                    searchResult
                 }
             }
             case '@search:MOVE_LEFT_CLICKED': {
